@@ -37,8 +37,7 @@ friends: [
     toJSON: {
       virtuals: true,
       getters: true
-    },
-    id: false
+    }
   }
 );
 
@@ -47,10 +46,5 @@ UserSchema.virtual('friendCount').get(function() {
   });
 
   const User = model('User', UserSchema);
-
-var validateEmail = function(email) {
-    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return re.test(email)
-};
 
 module.exports = User;
