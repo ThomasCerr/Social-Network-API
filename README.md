@@ -1,5 +1,5 @@
 # E-Social Network API
-# CChallenge 18
+# Challenge 18
 
 ```
 Your challenge is to build an API for a social network web application where users can share their thoughts, 
@@ -30,5 +30,6 @@ WHEN I test API POST and DELETE routes in Insomnia
 THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
 ```
 ## Mockup
+![Pic Mockup](https://user-images.githubusercontent.com/99366289/177374277-99d323d9-a6ac-405d-a37a-cb775a1282d4.PNG)
 
 
