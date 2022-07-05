@@ -10,7 +10,7 @@ const thoughtController = {
           res.sendStatus(400);
         });
     },
-    // get one Thought by id
+    // get single thought by ID
     getThoughtById({ params }, res) {
     Thought.findOne({ _id: params.thoughtId })
       .then(dbThoughtData => res.json(dbThoughtData))
@@ -42,7 +42,7 @@ const thoughtController = {
             res.status(400).json(err);
         })
     },
-
+//update thought
       updateThought({ params, body }, res) {
         Thought.findOneAndUpdate({ _id: params.thoughtId }, body, { new: true })
           .then(dbThoughtData => {
@@ -79,7 +79,7 @@ const thoughtController = {
         .catch(err => res.status(400).json(err))
     },
         
-    // DELETE to pull and remove a reaction by the reaction's reactionId value
+    // DELETE reaction
     removeReaction({params}, res) {
         Thought.findOneAndUpdate(
             { _id: params.thoughtId},

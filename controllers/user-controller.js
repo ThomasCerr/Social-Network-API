@@ -16,7 +16,7 @@ const userController = {
           res.sendStatus(400);
         });
     },
-    // get one User by id
+    // get single User
     getUserById({ params }, res) {
     User.findOne({ _id: params.id })
       .populate({
@@ -56,7 +56,7 @@ const userController = {
           .catch(err => res.json(err));
       },
     
-
+// add friend
     addFriend({params}, res) {
       User.findOneAndUpdate(
           { _id: params.userId},
@@ -73,7 +73,8 @@ const userController = {
       .catch(err => res.status(400).json(err));
   },
 
-  // DELETE to remove a friend from a user's friend list
+
+  //delete friend from user
   removeFriend({params}, res) {
       User.findOneAndUpdate(
           { _id: params.userId},
@@ -82,7 +83,7 @@ const userController = {
       )
       .then(dbUserData => {
           if(!dbUserData) {
-              res.status(404).json({ message: 'use not found!'});
+              res.status(404).json({ message: 'user not found!'});
               return;
           }
           res.json(dbUserData);
